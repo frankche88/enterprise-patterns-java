@@ -1,4 +1,4 @@
-package app.bankAccounts.controllers;
+package app.bankaccounts.controllers;
 
 import javax.inject.Inject;
 import javax.ws.rs.POST;
@@ -9,10 +9,10 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-import app.bankAccounts.application.assembler.BankAccountCreateAssembler;
-import app.bankAccounts.application.dto.BankAccountCreateDto;
-import app.bankAccounts.domain.entity.BankAccount;
 import app.bankAccounts.domain.repository.BankAccountRepository;
+import app.bankaccounts.application.assembler.BankAccountCreateAssembler;
+import app.bankaccounts.application.dto.BankAccountCreateDto;
+import app.bankaccounts.domain.entity.BankAccount;
 import app.common.application.dto.ApiStringResponseDto;
 import io.dropwizard.hibernate.UnitOfWork;
 import io.swagger.annotations.Api;

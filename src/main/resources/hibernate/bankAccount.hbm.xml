@@ -2,14 +2,21 @@
 <!DOCTYPE hibernate-mapping PUBLIC
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<hibernate-mapping package="banking.accounts.domain.entity">
+<hibernate-mapping package="app.bankaccounts.domain.entity">
 	<class name="BankAccount" table="bank_account">
         <id name="id" column="bank_account_id">
             <generator class="native"/>
         </id>
         <property name="number" column="number" />
-        <property name="balance" column="balance" />
-        <property name="isLocked" column="locked" />
-        <many-to-one name="customer" class="banking.customers.domain.entity.Customer" column="customer_id" not-null="true"/>
+        
+        <component name="balance" class="app.common.domain.valueObject.Money">
+	        <property name="amount" column="balance" />
+	        <property name="currency" column="currency" />
+	    </component>
+        
+        <property name="locked" column="locked" />
+        
+        <many-to-one name="customer" class="app.customers.domain.entity.Customer" column="customer_id" not-null="true"/>
+        
     </class> 
 </hibernate-mapping>

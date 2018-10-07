@@ -5,6 +5,7 @@ import java.io.InputStream;
 import com.google.common.collect.ImmutableList;
 
 import app.AppConfiguration;
+import app.bankAccounts.infrastructure.persistence.hibernate.BankAccountHibernateRepository;
 import app.customers.infrastructure.persistence.hibernate.repository.CustomerHibernateRepository;
 import app.movies.infrastructure.persistence.hibernate.MovieHibernateRepository;
 import io.dropwizard.db.PooledDataSourceFactory;
@@ -28,15 +29,18 @@ public class HbnBundle extends HibernateBundle<AppConfiguration> {
 		
 
 		
-		InputStream inputMovie = MovieHibernateRepository.class.getClassLoader().getResourceAsStream("hibernate/Movie.hbm.xml");
+		InputStream inputMovie = MovieHibernateRepository.class.getClassLoader().getResourceAsStream("hibernate/movie.hbm.xml");
 		
-		InputStream inputPurchasedMovie = MovieHibernateRepository.class.getClassLoader().getResourceAsStream("hibernate/PurchasedMovies.hbm.xml");
+		InputStream inputDirector = MovieHibernateRepository.class.getClassLoader().getResourceAsStream("hibernate/director.hbm.xml");
 		
-		InputStream inputCustomer = CustomerHibernateRepository.class.getClassLoader().getResourceAsStream("hibernate/Customer.hbm.xml");
+		InputStream inputCustomer = CustomerHibernateRepository.class.getClassLoader().getResourceAsStream("hibernate/customer.hbm.xml");
+		
+		InputStream inputBankAccount = BankAccountHibernateRepository.class.getClassLoader().getResourceAsStream("hibernate/bankAccount.hbm.xml");
 		
 		configuration.addInputStream(inputMovie);
-		configuration.addInputStream(inputPurchasedMovie);
+		configuration.addInputStream(inputDirector);
 		configuration.addInputStream(inputCustomer);
+		configuration.addInputStream(inputBankAccount);
 		
     }
 

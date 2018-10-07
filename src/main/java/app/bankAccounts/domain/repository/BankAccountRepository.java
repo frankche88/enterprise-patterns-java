@@ -1,6 +1,6 @@
 package app.bankAccounts.domain.repository;
 
-import app.bankAccounts.domain.entity.BankAccount;
+import app.bankaccounts.domain.entity.BankAccount;
 
 public interface BankAccountRepository {
 

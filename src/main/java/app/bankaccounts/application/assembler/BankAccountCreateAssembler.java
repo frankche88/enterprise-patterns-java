@@ -1,9 +1,9 @@
-package app.bankAccounts.application.assembler;
+package app.bankaccounts.application.assembler;
 
 import org.modelmapper.ModelMapper;
 
-import app.bankAccounts.application.dto.BankAccountCreateDto;
-import app.bankAccounts.domain.entity.BankAccount;
+import app.bankaccounts.application.dto.BankAccountCreateDto;
+import app.bankaccounts.domain.entity.BankAccount;
 
 public class BankAccountCreateAssembler {
 

@@ -1,45 +1,47 @@
-package app.bankAccounts.domain.entity;
+package app.bankaccounts.domain.entity;
 
 import app.common.domain.valueObject.Money;
 import app.customers.domain.entity.Customer;
 
 public class BankAccount {
 	
-	private long Id;
-    private String Number;
-    private Money Balance;
-    private boolean Locked;
-	private Customer Customer;
+	private long id;
+    private String number;
+    private Money balance;
+    private boolean locked;
+	private Customer customer;
 	public long getId() {
-		return Id;
+		return id;
 	}
 	public void setId(long id) {
-		Id = id;
+		this.id = id;
 	}
 	public String getNumber() {
-		return Number;
+		return number;
 	}
 	public void setNumber(String number) {
-		Number = number;
+		this.number = number;
 	}
 	public Money getBalance() {
-		return Balance;
+		return balance;
 	}
 	public void setBalance(Money balance) {
-		Balance = balance;
+		this.balance = balance;
 	}
 	public boolean isLocked() {
-		return Locked;
+		return locked;
 	}
 	public void setLocked(boolean locked) {
-		Locked = locked;
+		this.locked = locked;
 	}
 	public Customer getCustomer() {
-		return Customer;
+		return customer;
 	}
 	public void setCustomer(Customer customer) {
-		Customer = customer;
+		this.customer = customer;
 	}
+	
+	
 	
 
 }

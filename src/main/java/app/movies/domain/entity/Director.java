@@ -3,8 +3,8 @@ package app.movies.domain.entity;
 public class Director {
 
 	private long id;
-	private String IdentityDocument;
-	private String Name;
+	private String identityDocument;
+	private String name;
 	
 	
 	
@@ -12,10 +12,10 @@ public class Director {
 		return id;
 	}
 	public String getIdentityDocument() {
-		return IdentityDocument;
+		return identityDocument;
 	}
 	public String getName() {
-		return Name;
+		return name;
 	}
 	
 

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping
+	package="app.movies.domain.entity">
+	<class name="Movie" table="Movie" abstract="true" discriminator-value= "-1">
+		<id name="id" type="long" column="movie_id">
+			<generator class="native" />
+		</id>
+		
+		<property name="name" column="movie_name" />
+		
+		<property name="releaseDate" column="release_date" />
+		
+		<property name="mpaaRating" column="mpaa_rating" />
+		
+		<property name="genre" column="genre" />
+		
+		<property name="rating" column="rating" />
+		
+        <many-to-one name="director" class="app.movies.domain.entity.Director" fetch="select">
+            <column name="director_id" not-null="true" />
+        </many-to-one>
+
+	</class>
+</hibernate-mapping>
