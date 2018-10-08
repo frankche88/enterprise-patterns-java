@@ -21,19 +21,20 @@ public class MovieAssembler {
 	}
 
 	public MovieDto toDto(Movie movie) {
-		_mapper.typeMap(Movie.class, MovieDto.class).addMapping(src -> src.getDirector().getName(), MovieDto::setName);
-		
-		return _mapper.map(movie, MovieDto.class);
+
+		return _mapper.typeMap(Movie.class, MovieDto.class)
+				.addMapping(src -> src.getDirector().getName(), MovieDto::setDirector).map(movie);
+
 	}
 
 	public List<MovieDto> toDtoList(List<Movie> movieList) {
 
 		List<MovieDto> lstDtoMovies = new ArrayList<>();
-		
+
 		for (Movie movie : movieList) {
-			lstDtoMovies.add(_mapper.map(movie, MovieDto.class));
+			lstDtoMovies.add(toDto(movie));
 		}
-		
+
 		return lstDtoMovies;
 	}
 
