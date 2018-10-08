@@ -78,7 +78,7 @@ public class MoviesController {
 		if (onCD)
 			return new AvailableOnCDSpecification();
 		// spec = new MovieDirectedBySpecification("Marc Webb");
-		return specification;
+		n
 	}
 
 }
