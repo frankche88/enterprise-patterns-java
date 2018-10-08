@@ -62,12 +62,21 @@ public class MoviesController {
 	}
 
 	private Specification<Movie> getMovieSpecification(boolean forKidsOnly, boolean onCD) {
-		AbstractSpecification<Movie> specification = new MovieDirectedBySpecification("Bill Condon");
+		AbstractSpecification<Movie> specification = null;
+		
+		if(!forKidsOnly && !onCD) {
+			return new MovieDirectedBySpecification("Bill Condon");
+		}
+		
+		if(forKidsOnly && onCD) {
+			specification = new MovieForKidsSpecification();
+			return specification = specification.and(new AvailableOnCDSpecification());
+		}
 
 		if (forKidsOnly)
-			specification = new MovieForKidsSpecification();
+			return new MovieForKidsSpecification();
 		if (onCD)
-			specification = specification.and(new AvailableOnCDSpecification());
+			return new AvailableOnCDSpecification();
 		// spec = new MovieDirectedBySpecification("Marc Webb");
 		return specification;
 	}
