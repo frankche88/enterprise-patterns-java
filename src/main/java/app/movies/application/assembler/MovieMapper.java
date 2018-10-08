@@ -9,6 +9,7 @@ public class MovieMapper extends PropertyMap<Movie, MovieDto> {
 
 	@Override
 	protected void configure() {
+		
 		map().setDirector(source.getDirector() == null?null:source.getDirector().getName());
 		map().setMpaaRating(source.getMpaaRating() == null?null:source.getMpaaRating().toString());
 		

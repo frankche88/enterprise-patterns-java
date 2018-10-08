@@ -36,8 +36,8 @@ public class MovieHibernateRepository extends BaseHibernateRepository<Movie> imp
 		
 		TypedQuery<Movie> indexQuery =  getSession().createQuery(criteriaQuery);
 		
-		indexQuery.setFirstResult((page - 1) * pageSize);
-		indexQuery.setMaxResults(pageSize);
+//		indexQuery.setFirstResult((page - 1) * pageSize);
+//		indexQuery.setMaxResults(pageSize);
 
 
 		return indexQuery.getResultList();

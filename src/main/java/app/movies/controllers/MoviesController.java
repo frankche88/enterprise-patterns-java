@@ -43,7 +43,7 @@ public class MoviesController {
 
 		try {
 
-			Specification<Movie> specification = GetMovieSpecification(forKidsOnly, onCD);
+			Specification<Movie> specification = getMovieSpecification(forKidsOnly, onCD);
 			// TODO: Validations with Notification Pattern
 			List<Movie> movies = _movieRepository.getList(specification, minimumRating, 1, 5);
 
@@ -61,18 +61,13 @@ public class MoviesController {
 		}
 	}
 
-	private Specification<Movie> GetMovieSpecification(boolean forKidsOnly, boolean onCD) {
-		AbstractSpecification<Movie> specification = null;
-
-		if (!forKidsOnly && onCD) {
-			return new MovieDirectedBySpecification("Bill Condon");
-		}
+	private Specification<Movie> getMovieSpecification(boolean forKidsOnly, boolean onCD) {
+		AbstractSpecification<Movie> specification = new MovieDirectedBySpecification("Bill Condon");
 
 		if (forKidsOnly)
 			specification = new MovieForKidsSpecification();
 		if (onCD)
 			specification = specification.and(new AvailableOnCDSpecification());
-		specification = specification.and(new MovieDirectedBySpecification("Bill Condon"));
 		// spec = new MovieDirectedBySpecification("Marc Webb");
 		return specification;
 	}
