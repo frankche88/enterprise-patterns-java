@@ -11,13 +11,14 @@ public class BankAccountCreateMapper extends PropertyMap<BankAccountCreateDto, B
 
 	@Override
 	protected void configure() {
-		map().setBalance(new Money(source.getBalance(), source.getCurrency()));
 		
 		Customer customer = new Customer();
 		
 		customer.setId(source.getCustomerId());
 		
 		map().setCustomer(customer);
+
+		map().setBalance(new Money(source.getBalance(), source.getCurrency()));
 		
 	}
 

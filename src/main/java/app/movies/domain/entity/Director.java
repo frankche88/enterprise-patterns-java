@@ -8,6 +8,15 @@ public class Director {
 	
 	
 	
+	protected void setId(long id) {
+		this.id = id;
+	}
+	protected void setIdentityDocument(String identityDocument) {
+		this.identityDocument = identityDocument;
+	}
+	protected void setName(String name) {
+		this.name = name;
+	}
 	public long getId() {
 		return id;
 	}

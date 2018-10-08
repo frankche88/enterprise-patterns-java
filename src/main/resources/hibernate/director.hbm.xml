@@ -3,16 +3,16 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="app.movies.domain.entity.Director" table="director">
-        <id name="director_id" type="long" >
-            <column name="id" not-null="true"/>
+        <id name="id" type="long" >
+            <column name="director_id" not-null="true"/>
         </id>
 
-        <property name="identity_document" type="string">
-            <column name="identityDocument" length="20" not-null="true" />
+        <property name="identityDocument" type="string">
+            <column name="identity_document" length="20" not-null="true" />
         </property>
         
-        <property name="director_name" type="string">
-            <column name="name" length="50" not-null="true" />
+        <property name="name" type="string">
+            <column name="director_name" length="50" not-null="true" />
         </property>
         
     </class>

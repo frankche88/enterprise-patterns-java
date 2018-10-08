@@ -6,6 +6,22 @@ import app.common.application.enumeration.Currency;
 
 public class Money {
 
+	protected void setAmount(BigDecimal amount) {
+		this.amount = amount;
+	}
+
+	protected void setCurrency(Currency currency) {
+		this.currency = currency;
+	}
+
+	public BigDecimal getAmount() {
+		return amount;
+	}
+
+	public Currency getCurrency() {
+		return currency;
+	}
+
 	public BigDecimal amount;
 	public Currency currency;
 

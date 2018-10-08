@@ -13,11 +13,12 @@ public class MovieAssembler {
 
 	private final ModelMapper _mapper;
 
-	public MovieAssembler(ModelMapper mapper) {
-		_mapper = mapper;
+	public MovieAssembler() {
+		_mapper = new ModelMapper();
 	}
 
 	public Movie toEntity(MovieDto bankAccountCreateDto) {
+		_mapper.addMappings(new MovieMapper());
 		return _mapper.map(bankAccountCreateDto, Movie.class);
 	}
 

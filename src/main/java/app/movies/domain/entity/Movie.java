@@ -35,5 +35,27 @@ public class Movie {
 	public Director getDirector() {
 		return director;
 	}
+	protected void setId(long id) {
+		this.id = id;
+	}
+	protected void setName(String name) {
+		this.name = name;
+	}
+	protected void setReleaseDate(DateTime releaseDate) {
+		this.releaseDate = releaseDate;
+	}
+	protected void setMpaaRating(MpaaRating mpaaRating) {
+		this.mpaaRating = mpaaRating;
+	}
+	protected void setGenre(String genre) {
+		this.genre = genre;
+	}
+	protected void setRating(double rating) {
+		this.rating = rating;
+	}
+	protected void setDirector(Director director) {
+		this.director = director;
+	}
+	
 
 }

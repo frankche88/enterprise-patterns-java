@@ -11,7 +11,12 @@
         
         <component name="balance" class="app.common.domain.valueObject.Money">
 	        <property name="amount" column="balance" />
-	        <property name="currency" column="currency" />
+	        <property name="currency" column="currency">
+	        	<type name="org.hibernate.type.EnumType">
+			        <param name="enumClass">app.common.application.enumeration.Currency</param>
+			        <param name="useNamed">true</param>
+			    </type>
+	        </property>
 	    </component>
         
         <property name="locked" column="locked" />
